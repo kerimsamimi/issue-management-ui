@@ -16,8 +16,8 @@ import {ModalModule} from 'ngx-bootstrap';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {UserService} from './services/shared/user.service';
 import {IssueHistoryService} from './services/shared/issue.history.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 export const createTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

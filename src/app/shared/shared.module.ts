@@ -4,7 +4,6 @@ import {BsModalRef, ModalModule} from 'ngx-bootstrap';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
-import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   imports: [
@@ -19,7 +18,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     ReactiveFormsModule,
     ConfirmationComponent
   ],
-  declarations: [ConfirmationComponent, NotfoundComponent],
+  declarations: [ConfirmationComponent],
   entryComponents: [
     ConfirmationComponent
   ]
