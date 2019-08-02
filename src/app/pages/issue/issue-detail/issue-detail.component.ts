@@ -81,7 +81,7 @@ export class IssueDetailComponent implements OnInit {
       this.datatable_rows = response['issueHistories'];
     });
   }
-
+  // fdfdf
   createIssueDetailFormGroup(response) {
     return this.formBuilder.group({
       id: response['id'],
