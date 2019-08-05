@@ -6,9 +6,21 @@ import {ApiService} from '../api.service';
 @Injectable()
 export class UserService {
 
-  private USER_PATH = '/users';
+  private USER_PATH = '/dashboard';
 
   constructor(private apiService: ApiService) {
+  }
+
+  getAllPageable(page): Observable<any> {
+    return this.apiService.get(this.USER_PATH + '/pagination', page).pipe(map(
+      res => {
+        if (res) {
+          return res;
+        } else {
+          return {};
+        }
+      }
+    ));
   }
 
   getAll(): Observable<any> {
@@ -50,6 +62,17 @@ export class UserService {
     ));
   }
 
-
+  delete(id): Observable<any> {
+    return this.apiService.delete(this.USER_PATH + '/' + id).pipe(map(
+      res => {
+        if (res) {
+          return res;
+        } else {
+          console.log(res);
+          return {};
+        }
+      }
+    ));
+  }
 
 }

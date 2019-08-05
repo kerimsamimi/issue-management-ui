@@ -40,7 +40,7 @@ export class IssueDetailComponent implements OnInit {
     });
 
     this.columns = [
-      {prop: 'id', name: 'No', maxWidth: 40},
+      {prop: 'id', name: 'No', maxWidth: 40, sortable: true},
       {prop: 'description', name: 'Description'},
       {prop: 'date', name: 'Issue Date', cellTemplate: this.tplDateCell},
       {prop: 'issueStatus', name: 'Issue Status'},
@@ -81,7 +81,6 @@ export class IssueDetailComponent implements OnInit {
       this.datatable_rows = response['issueHistories'];
     });
   }
-  // fdfdf
   createIssueDetailFormGroup(response) {
     return this.formBuilder.group({
       id: response['id'],
