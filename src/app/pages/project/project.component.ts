@@ -40,7 +40,7 @@ export class ProjectComponent implements OnInit {
       'projectCode': [null, [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
       'projectName': [null, [Validators.required, Validators.minLength(4)]],
       'managerId': [null, [Validators.required]],
-  });
+    });
 
     this.userService.getAll().subscribe(res => {
       this.managerOptions = res;

@@ -17,6 +17,8 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {UserService} from './services/shared/user.service';
 import {IssueHistoryService} from './services/shared/issue.history.service';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {LoginComponent} from './pages/login/login.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 export const createTranslateLoader = (http: HttpClient) => {
@@ -30,7 +32,8 @@ export const createTranslateLoader = (http: HttpClient) => {
     HeaderComponent,
     AppLayoutComponent,
     SidebarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ export const createTranslateLoader = (http: HttpClient) => {
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [ApiService, ProjectService, IssueService, UserService, IssueHistoryService],
   bootstrap: [AppComponent]
