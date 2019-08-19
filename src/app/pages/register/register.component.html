@@ -1,0 +1,25 @@
+<div class="modal-body">
+  <form  [formGroup]="registerForm">
+    <div class="form-group">
+      <label >Username</label>
+      <input type="text" style="width: 320px" formControlName="username" class="form-control" placeholder="User Name *"/>
+      <div *ngIf="f.username.errors.required">Username is required</div>
+    </div>
+    <div class="form-group">
+      <label >Password</label>
+      <input type="password" style="width: 320px" formControlName="password" class="form-control" placeholder="Your Password *" value="" />
+      <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+    <div class="form-group">
+      <label >Confirm Password</label>
+      <input type="password" style="width: 320px" formControlName="passwordConfirm" class="form-control" placeholder="Confirm Your Password *" value="" />
+      <div *ngIf="f.passwordConfirm.errors.required">Password is required</div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary"(click)="register()">Sing Up</button>
+      <div *ngIf="!equality" style="color:#ff2132"> **Password Should be Same </div>
+      <div *ngIf="loading" style="color:#27ff0d"> **Registered Successsfully </div>
+    </div>
+    <a routerLink="/login">Go and login</a>
+  </form>
+</div>

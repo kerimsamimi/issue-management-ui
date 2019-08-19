@@ -1,0 +1,19 @@
+<div class="modal-body">
+  <form  [formGroup]="userForm" >
+    <div class="form-group">
+      <label >Username</label>
+      <input type="text" style="width: 320px" formControlName="username" class="form-control" placeholder="User Name *"/>
+      <div *ngIf="f.username.errors.required">Username is required</div>
+    </div>
+    <div class="form-group">
+      <label >Password</label>
+      <input type="password" style="width: 320px" formControlName="password" class="form-control" placeholder="Your Password *" value="" />
+      <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+    <div class="form-group">
+      <p *ngIf="loading"  style="color:#ff2132" > **Invalid Username or Password </p>
+      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+    <button class="btn btn-primary btn-block" routerLink="/register" style="width: 320px" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+  </form>
+</div>
