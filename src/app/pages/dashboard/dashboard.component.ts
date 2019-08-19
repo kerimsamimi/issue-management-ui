@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
         this.closeAndResetModal();
       }
     );
-  }
+}
 
   closeAndResetModal() {
     this.userForm.reset();

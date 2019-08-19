@@ -19,6 +19,7 @@ import {IssueHistoryService} from './services/shared/issue.history.service';
 import {NotfoundComponent} from './shared/notfound/notfound.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginComponent} from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 export const createTranslateLoader = (http: HttpClient) => {
@@ -33,7 +34,8 @@ export const createTranslateLoader = (http: HttpClient) => {
     AppLayoutComponent,
     SidebarComponent,
     NotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

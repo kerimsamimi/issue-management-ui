@@ -99,4 +99,16 @@ export class UserService {
       }
     }));
   }
+
+  register(user): Observable<any> {
+    return this.apiService.post( '/register', user).pipe(map(res => {
+      if (res) {
+        return res;
+      } else {
+        console.log(res);
+        return {};
+      }
+    }));
+  }
+
 }
