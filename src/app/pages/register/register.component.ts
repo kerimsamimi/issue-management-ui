@@ -32,10 +32,15 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    if (this.registerForm.value['password'] === this.registerForm.value['passwordConfirm']) {
+    if (this.registerForm.value['password'] === this.registerForm.value['passwordConfirm']
+      && this.registerForm.value['password'] != null
+      && this.registerForm.value['passwordConfirm'] != null
+      && this.registerForm.value['username'] != null) {
+
       this.userService.login(this.registerForm.value).subscribe((data) => {
         this.router.navigate([`../register`], {relativeTo: this.route});
       });
+      this.loading = true;
       /* if (!this.registerForm.valid) {
          return;
        }*/
@@ -45,13 +50,10 @@ export class RegisterComponent implements OnInit {
         }
       );
       this.equality = true;
-      this.loading = true;
     } else {
       this.equality = false;
     }
   }
-
-
   closeAndResetModal() {
     this.registerForm.reset();
     this.modalRef.hide();
